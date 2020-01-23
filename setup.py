@@ -9,7 +9,7 @@ setup(
 	author='Jonathan Leeming',
 	author_email='jpleeming51@gmail.com',
 	url='https://github.com/moddedTechnic/django-HTML-components',
-	download_url='https://github.com/moddedTechnic/django-HTML-components/archive/v0.1.1-alpha.tar.gz',
+	download_url='https://github.com/moddedTechnic/django-HTML-components/archive/v0.1.2-alpha.tar.gz',
 	keywords=['django', 'HTML', 'components'],
 	install_requires=[
 		'django',
