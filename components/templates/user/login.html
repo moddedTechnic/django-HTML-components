@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% load components %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'user/login.min.css' %}">
+
+	{% registerAPI "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" %}
+	{% registerScript "user/responsive-login.js" %}
+
+	<form action="" method="post" id="signup-form">
+		{% csrf_token %}
+
+		<h1>Log in to your account</h1>
+
+		<div class="txtb">
+			<input type="text" name="username" autocomplete="username">
+			<span data-placeholder="Username"></span>
+		</div>
+
+		<div class="txtb">
+			<input type="password" name="password" autocomplete="new-password">
+			<span data-placeholder="Password"></span>
+		</div>
+
+		<input type="submit" value="Log in">
+
+		<p>
+			{% if errors %}
+				{% for error in errors %}
+					{{error}} <br>
+				{% endfor %}
+			{% endif %}
+		</p>
+
+		<p>
+			Don't have an account? <a href="/components/user/signup">Sign up</a>
+		</p>
+	</form>
+{% endblock content %}

@@ -1,0 +1,18 @@
+<header>
+
+	{% load static %}
+	<link rel="stylesheet" href='{% static "navbar/navbar.min.css" %}''>
+
+	{% load components %}
+	{% registerAPI "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" %}
+	{% registerScript "navbar/responsive-nav.js" %}
+
+	<nav>
+		<ul id="navbar">
+			{{ links|safe }}
+
+			<li class="toggle"><a href="#navbar">{% icon bars %}</a></li>
+		</ul>
+	</nav>
+
+</header>

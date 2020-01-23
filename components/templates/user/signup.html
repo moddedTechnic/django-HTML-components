@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% load components %}
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'user/signup.min.css' %}">
+
+	{% registerAPI "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" %}
+	{% registerScript "user/responsive-signup.js" %}
+
+	<form action="" method="post" id="signup-form">
+		{% csrf_token %}
+
+		<h1>Create an account</h1>
+
+		<div class="txtb">
+			<input type="text" name="username"autocomplete="username">
+			<span data-placeholder="Username"></span>
+		</div>
+
+		<div class="txtb">
+			<input type="password" name="password1" autocomplete="new-password">
+			<span data-placeholder="Password"></span>
+		</div>
+
+		<div class="txtb">
+			<input type="password" name="password2" autocomplete="new-password">
+			<span data-placeholder="Confirm password"></span>
+		</div>
+
+		<div class="checkb">
+			<input type="checkbox" name="newsletter" id="newsletter">
+			<label for="newsletter"></label>
+			<span>I would like to receive news and updates via the newsletter</span>
+		</div>
+
+		<input type="submit" value="Sign up">
+
+		<p>
+			{% if errors %}
+				{% for error in errors %}
+					{{error}} <br>
+				{% endfor %}
+			{% endif %}
+		</p>
+
+		<p>
+			Already have an account? <a href="/components/user/login">Log in</a>
+		</p>
+	</form>
+{% endblock content %}
