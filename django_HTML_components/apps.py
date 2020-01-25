@@ -26,7 +26,7 @@ class Printer:
 
 
 class ComponentConfig(AppConfig):
-	name = 'components'
+	name = 'django_HTML_components'
 	printer = Printer()
 
 	def ready(self):
