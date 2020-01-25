@@ -13,6 +13,7 @@ setup(
 	keywords=['django', 'HTML', 'components'],
 	install_requires=[
 		'django',
+		'django_compilers',
 	],
 	classifiers=[
 		'Development Status :: 3 - Alpha',
